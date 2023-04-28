@@ -1,5 +1,21 @@
-import '@/styles/globals.css'
+import { createGlobalStyle } from "styled-components"
+
+const GlobalStyles = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:ital,wght@0,400;0,500;0,600;1,200&display=swap');
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; 
+  }
+`;
+
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </>
+  )
 }
