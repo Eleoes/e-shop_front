@@ -20,9 +20,16 @@ export const ButtonStyle = css`
         border: 1px solid #fff;
     `}
 
-    ${props => props.primary && css`
+    ${props => props.primary && !props.outline && css`
         background-color: #5542F6;
         color: #fff;
+        border: 1px solid #5542F6;
+        gap: .25rem;
+    `}
+
+    ${props => props.primary && props.outline && css`
+        background-color: transparent;
+        color: #5542F6;
         border: 1px solid #5542F6;
         gap: .25rem;
     `}
