@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import { CartContextProvider } from "@/components/CartContext";
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:ital,wght@0,400;0,500;0,600;1,200&display=swap');
