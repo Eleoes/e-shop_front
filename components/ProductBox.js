@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Button from "@/components/Button";
-import { BiCart } from "react-icons/bi";
 import Link from "next/link";
 import { CartContext } from "./CartContext";
 import { useContext } from "react";
@@ -38,15 +37,25 @@ const ProductInfoBox = styled.div`
 `;
 
 const PriceRow = styled.div`
-    display: flex;
+    display: block;
+    @media screen and (min-width: 768px){
+        display: flex;
+        gap: 10px;
+    }
     align-items: center;
     justify-content: space-between;
     margin-top: 2px;
 `;
 
 const Price = styled.span`
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
+    display: flex;
+    flex-direction: row-reverse;
+    @media screen and (min-width: 768px){
+        font-size: 1.5rem;
+        display: static;
+    }
 `;
 
 export default function ProductBox({_id, title,description,price, images}) {
@@ -65,7 +74,7 @@ export default function ProductBox({_id, title,description,price, images}) {
                     <div>
                         <Price>${price}</Price>
                     </div>
-                    <Button onClick={() => addProduct(_id)}primary outline><BiCart />Add to cart</Button>
+                    <Button block onClick={() => addProduct(_id)}primary outline>Add to cart</Button>
                 </PriceRow>
             </ProductInfoBox>
         </ProductWrapper>

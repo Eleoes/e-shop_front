@@ -10,9 +10,12 @@ import axios from "axios";
 
 const ColumnsWrapper = styled.div`
     display: grid;
-    grid-template-columns: 1.3fr .7fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     margin-top: 40px;
+    @media screen and (min-width: 768px){
+        grid-template-columns: 1.3fr .7fr;
+    }
 `;
 
 const Box = styled.div`
@@ -26,23 +29,39 @@ const ProductInfoCell = styled.td`
 `;
 
 const ProductImgBox = styled.div`
-    width: 130px;
-    height: 130px;
-    padding: 10px;
+    width: 80px;
+    height: 80px;
+    padding: 2px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     img {
-        max-width: 130px;
-        max-height: 130px;
+        max-width: 80px;
+        max-height: 80px;
         border-radius: 10px;
+    }
+    
+    @media screen and (min-width: 768px){
+        padding: 10px;
+        width: 130px;
+        height: 130px;
+        img {
+            max-width: 130px;
+            max-height: 130px;
+            border-radius: 10px;
+        }
     }
 `;
 
 const QuantityLabel = styled.span`
-    padding: 0 3px; 
+    padding: 0 15px;
+    display: block;
+    @media screen and (min-width: 768px){
+        display: inline-block;
+        padding: 0 10px;
+    }
 `;
 
 const CityHolder = styled.div`
