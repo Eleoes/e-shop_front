@@ -1,6 +1,6 @@
 # E-Shop: Front
 
-This application is a tool designed to streamline the management of an online store. The app features a user-friendly dashboard that allows admins to easily handle products from a database. 
+Testing deployment.
 
 ## Getting Started
 
