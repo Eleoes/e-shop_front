@@ -19,7 +19,7 @@ export default function ProductsPage({products}) {
     )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     await mongooseConnect();
     const products = await Product.find({},null, {sort:{'_id':-1}});
 
