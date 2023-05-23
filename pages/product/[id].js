@@ -61,17 +61,6 @@ export default function ProductPage({product}) {
     )
 }
 
-export async function getStaticPaths() {
-    const res = await fetch('https://e-shop-front.netlify.app/products')
-    const products= await res.json()
-
-    const paths = products.map((product) => ({
-    params: { id: product._id.toString() },
-    }))
-
-    return { paths, fallback: false }
-}
-
 export async function getStaticProps(context) {
     await mongooseConnect();
     const {id} = context.query;
