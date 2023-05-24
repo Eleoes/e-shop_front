@@ -61,31 +61,34 @@ export default function ProductPage({product}) {
     )
 }
 
-export async function getStaticProps(context) {
+
+export async function getServerSideProps(context) {
     await mongooseConnect();
-    const {id} = context.query;
+    // console.log(context); // Log the entire context object
+    const { id } = context.query;
     const product = await Product.findById(id);
 
     return {
         props: {
             product: JSON.parse(JSON.stringify(product)),
-        }
-    }
-
-}
-
-export async function getStaticPaths() {
-    await mongooseConnect();
-    // Fetch the list of available product IDs from your data source
-    const products = await Product.find({}, '_id');
-
-    // Map the product IDs to the `params` object required by Next.js
-    const paths = products.map((product) => ({
-    params: { id: product._id.toString() },
-    }));
-    console.log(products);
-    return {
-        paths,
-        fallback: false, // Set to `true` if you want to enable fallback behavior
+        },
     };
 }
+
+// export async function getStaticPaths() {
+//     await mongooseConnect();
+//     // Fetch the list of available product IDs from your data source
+//     const products = await Product.find({}, '_id');
+
+//     // Map the product IDs to the `params` object required by Next.js
+//     const paths = products.map((product) => ({
+//     params: { id: product._id.toString() },
+//     }));
+
+    
+//     console.log(products);
+//     return {
+//         paths,
+//         fallback: false, // Set to `true` if you want to enable fallback behavior
+//     };
+// }
