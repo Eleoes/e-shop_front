@@ -83,7 +83,7 @@ export async function getStaticPaths() {
     const paths = products.map((product) => ({
     params: { id: product._id.toString() },
     }));
-
+    console.log(products);
     return {
         paths,
         fallback: false, // Set to `true` if you want to enable fallback behavior

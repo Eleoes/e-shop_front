@@ -89,7 +89,11 @@ export default function Featured({product}) {
                         </div>
                     </Column>
                     <Column>
-                        <Image src="https://pngimg.com/uploads/macbook/macbook_PNG35.png"  alt=""/>
+                        <Image 
+                            src="/public/macbook_PNG35.png"  
+                            alt=""
+                            width="200"
+                            height="200"/>
                     </Column>
                 </ColumnsWrapper>
                 
