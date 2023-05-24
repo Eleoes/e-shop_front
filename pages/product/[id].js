@@ -75,6 +75,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
+    await mongooseConnect();
     // Fetch the list of available product IDs from your data source
     const products = await Product.find({}, '_id');
 
@@ -84,7 +85,7 @@ export async function getStaticPaths() {
     }));
 
     return {
-    paths,
-    fallback: false, // Set to `true` if you want to enable fallback behavior
+        paths,
+        fallback: false, // Set to `true` if you want to enable fallback behavior
     };
 }
