@@ -5,6 +5,7 @@ import { BiCart } from "react-icons/bi";
 import ButtonLink from "./ButtonLink";
 import { CartContext } from "./CartContext";
 import { useContext } from "react";
+import Image from "next/image";
 
 const Bg = styled.div`
     background-color: #222;
@@ -88,7 +89,7 @@ export default function Featured({product}) {
                         </div>
                     </Column>
                     <Column>
-                        <img src="https://pngimg.com/uploads/macbook/macbook_PNG35.png" />
+                        <Image src="https://pngimg.com/uploads/macbook/macbook_PNG35.png"  alt=""/>
                     </Column>
                 </ColumnsWrapper>
                 
