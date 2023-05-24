@@ -73,3 +73,18 @@ export async function getStaticProps(context) {
     }
 
 }
+
+export async function getStaticPaths() {
+    // Fetch the list of available product IDs from your data source
+    const products = await Product.find({}, '_id');
+
+    // Map the product IDs to the `params` object required by Next.js
+    const paths = products.map((product) => ({
+    params: { id: product._id.toString() },
+    }));
+
+    return {
+    paths,
+    fallback: false, // Set to `true` if you want to enable fallback behavior
+    };
+}
