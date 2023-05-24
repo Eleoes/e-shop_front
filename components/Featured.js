@@ -90,7 +90,7 @@ export default function Featured({product}) {
                     </Column>
                     <Column>
                         <Image 
-                            src="/public/macbook_PNG35.png"  
+                            src="/macbook_PNG35.png"  
                             alt=""
                             width="200"
                             height="200"/>
